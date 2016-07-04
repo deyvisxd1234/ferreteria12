@@ -24,7 +24,7 @@ public class test {
 
     public static void main(String[] args) {
 
-        crear();
+        update();
     }
 
     public static void conex() {
@@ -63,6 +63,20 @@ public class test {
             System.out.println("ok");
         } else {
             System.out.println("error");
+       
+   }
+    }
+       public static  void update(){
+         usuario r= new usuario(15,"merly", "merli123", "merly@");
+          
+        int c = aO.update(r);
+        if(c>=0){
+            System.out.println("crear");
+        }else{
+            System.out.println("n0");
         }
+   
+    
+    
     }
 }
