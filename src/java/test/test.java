@@ -67,10 +67,10 @@ public class test {
    }
     }
        public static  void update(){
-         usuario r= new usuario(15,"merly", "merli123", "merly@");
+         usuario r= new usuario("merly", "merli123", "merly@");
           
-        int c = aO.update(r);
-        if(c>=0){
+        int a = aO.update(r);
+        if(a>=0){
             System.out.println("crear");
         }else{
             System.out.println("n0");
