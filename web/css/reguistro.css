@@ -1,0 +1,24 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100);
+body{
+    background: url(https://dl.dropboxusercontent.com/u/23299152/Wallpapers/wallpaper-22705.jpg) no-repeat center center fixed; 
+    
+}
+
+#reguistro{
+    margin-top: 12px;
+    max-width: 80%;
+    height: auto;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 2%;
+    border: solid #235ca8 0.5px;
+    
+  }
+  
+  #booton{
+     margin: auto;
+    width: 60%;
+   
+    padding-left:30%;
+  }
+
