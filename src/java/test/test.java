@@ -24,7 +24,7 @@ public class test {
 
     public static void main(String[] args) {
 
-        update();
+        update(21);
     }
 
     public static void conex() {
@@ -66,10 +66,10 @@ public class test {
        
    }
     }
-       public static  void update(){
-         usuario r= new usuario("merly", "merli123", "merly@");
-          
-        int a = aO.update(r);
+       public static  void update(int id){
+         usuario r= new usuario();
+         r.setPassword("abcd");
+        int a = aO.update(r,id);
         if(a>=0){
             System.out.println("crear");
         }else{

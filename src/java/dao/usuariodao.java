@@ -31,7 +31,6 @@ public class usuariodao implements operaciones<usuario> {
             + "VALUES ( ?, ?,?);";
     private final String SQL_READALL = "SELECT *FROM usuario";
     private final String SQL_DELETE = "DELETE FROM usuario WHERE id =";
-      private final String SQL_UPADTE = "UPDATE usuario SET password = ? WHERE id=";
     @Override
     public int create(usuario e) {
         int c = 0;
@@ -51,17 +50,14 @@ public class usuariodao implements operaciones<usuario> {
     }
 
     @Override
-    public int update(usuario e) {
+    public int update(usuario e,int id) {
       int d=0;
-             
         try {
             cx = coneccion.getConexion();
-            ps = cx.prepareStatement(SQL_UPADTE + e);
-            ps.setString(1, e.getUser());
-            ps.setString(2, e.getPassword());
-            ps.setString(3, e.getEmail());
-            d = ps.executeUpdate();
+            st = cx.createStatement();
+            d = st.executeUpdate("UPDATE usuario SET password = '"+e.getPassword()+"' WHERE id=" +id);
         } catch (Exception ex) {
+            System.out.println("Error "+ex);
         }
         return d;
     }
@@ -73,7 +69,7 @@ public class usuariodao implements operaciones<usuario> {
             st = cx.createStatement();
             r = st.executeUpdate(SQL_DELETE + key);
         } catch (Exception ex) {
-            System.out.println(ex);
+            System.out.println("error"+ex);
         }
         return r;
     }

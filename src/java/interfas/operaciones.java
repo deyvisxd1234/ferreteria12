@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface operaciones <Entidad> {
     public int create(Entidad e);
-    public int update(Entidad e);
+    public int update(Entidad e,int id);
     public int delete(Object key);
     public List<Entidad> readAll();
     public List<Entidad> read(Object key);
