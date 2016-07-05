@@ -69,6 +69,7 @@ public class control extends HttpServlet {
                 session.setAttribute("lista", aO.readAll());
                 dispatcher = getServletContext().getRequestDispatcher(pag);
                 dispatcher.forward(request, response);
+                break;
             case 2:
                 pag = "/reguistros.jsp";
                 out.println("hola");
@@ -113,9 +114,12 @@ public class control extends HttpServlet {
 
                 int id2 = Integer.parseInt(request.getParameter("id"));
                 int y2 = aO.delete(id2);
-                pag = "/control?op=1";
-                dispatcher = getServletContext().getRequestDispatcher(pag);
-                dispatcher.forward(request, response);
+                if (y2 != 0) {
+                    pag = "/control?op=1";
+                    dispatcher = getServletContext().getRequestDispatcher(pag);
+                    dispatcher.forward(request, response);
+                }
+
                 break;
         }
     }
