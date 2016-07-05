@@ -95,7 +95,14 @@ public class control extends HttpServlet {
                 
                 break;
                   
-            case 4:
+             case 5: String user1 = request.getParameter("nombre");
+                    String pass1 = request.getParameter("password");
+                    String email1 = (request.getParameter("email"));
+                    u = new usuario(user1, pass1, email1);
+                    int y = aO.update(u);
+                    pag = "/ci?op=1"; 
+                    dispatcher = getServletContext().getRequestDispatcher(pag);
+                    dispatcher.forward(request, response);
 
             case 6:
 
