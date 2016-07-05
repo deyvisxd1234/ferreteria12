@@ -83,28 +83,32 @@ public class control extends HttpServlet {
                 u = new usuario(user, pass, email);
                 int c = aO.create(u);
                 if (c > 0) {
-                    pag = "/control?op=1"; 
+                    pag = "/control?op=1";
+                    dispatcher = getServletContext().getRequestDispatcher(pag);
+                    dispatcher.forward(request, response);
+                } else {
+                    pag = "/control?op=1";
                     dispatcher = getServletContext().getRequestDispatcher(pag);
                     dispatcher.forward(request, response);
                 }
-                else{  
-                    pag = "/control?op=1"; 
-                    dispatcher = getServletContext().getRequestDispatcher(pag);
-                    dispatcher.forward(request, response);
-                }
-                
+
                 break;
-                  
-             case 5:
-                    String pass1 = request.getParameter("password");
-                     u = new usuario( pass1);
-                      int c= aO.update(u);
-                    
-                    pag = "/control?op=1"; 
+
+            case 5:
+                int id = Integer.parseInt(request.getParameter("id"));
+                String pass1 = request.getParameter("password");
+                usuario us = new usuario();
+                us.setPassword(pass1);
+                int f = aO.update(us, id);
+                if (f >= 0) {
+                    pag = "/control?op=1";
                     dispatcher = getServletContext().getRequestDispatcher(pag);
                     dispatcher.forward(request, response);
-                    break;
-                    
+                } else {
+                }
+
+                break;
+
             case 6:
 
                 int id2 = Integer.parseInt(request.getParameter("id"));

@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class coneccion {
     private static final String URL= "jdbc:mysql://localhost:3306/bd_ferreteria"; 
     private static final String USER= "root"; 
-    private static final String PASS= "12345678"; 
+    private static final String PASS= "root"; 
     private static final String DRIVER= "com.mysql.jdbc.Driver"; 
     private static Connection cx;
     public static Connection getConexion(){
