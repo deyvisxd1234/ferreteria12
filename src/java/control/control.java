@@ -95,15 +95,16 @@ public class control extends HttpServlet {
                 
                 break;
                   
-             case 5: String user1 = request.getParameter("nombre");
+             case 5:
                     String pass1 = request.getParameter("password");
-                    String email1 = (request.getParameter("email"));
-                    u = new usuario(user1, pass1, email1);
-                    int y = aO.update(u);
-                    pag = "/ci?op=1"; 
+                     u = new usuario( pass1);
+                      int c= aO.update(u);
+                    
+                    pag = "/control?op=1"; 
                     dispatcher = getServletContext().getRequestDispatcher(pag);
                     dispatcher.forward(request, response);
-
+                    break;
+                    
             case 6:
 
                 int id2 = Integer.parseInt(request.getParameter("id"));
